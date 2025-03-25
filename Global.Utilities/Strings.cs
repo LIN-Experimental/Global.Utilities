@@ -1,4 +1,8 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.ComponentModel;
+using System.Reflection;
+using System;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace Global.Utilities;
 
@@ -39,6 +43,18 @@ public static class Strings
     }
 
 
+    public static string IsNullOrEmptyThem(this string value, string replaceValue)
+    {
+       if (string.IsNullOrWhiteSpace(value))
+            return replaceValue;
+       return value;
+    }
+
+    public static string RemoveExtraSpaces(this string value)
+    {
+        return Regex.Replace(value.Trim(), @"\s+", " ");
+    }
+
 
     /// <summary>
     /// Es un mail valido.
@@ -53,6 +69,22 @@ public static class Strings
         var isValid = Regex.IsMatch(email, pattern);
 
         return isValid;
+    }
+
+
+    public static string GetDescription<T>(this T enumValue) where T : Enum
+    {
+        var field = enumValue.GetType().GetField(enumValue.ToString());
+        var attribute = field.GetCustomAttribute<DescriptionAttribute>();
+        return attribute?.Description ?? enumValue.ToString();
+    }
+
+    public static void AddToList<TKey, TValue>(this Dictionary<TKey, List<TValue>> dict, TKey key, TValue value)
+    {
+        if (!dict.ContainsKey(key))
+            dict[key] = [];
+
+        dict[key].Add(value);
     }
 
 

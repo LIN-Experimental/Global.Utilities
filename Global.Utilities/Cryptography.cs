@@ -7,7 +7,6 @@ namespace Global.Utilities;
 public static class Cryptography
 {
 
-
     /// <summary>
     /// Encripta una clave
     /// </summary>
