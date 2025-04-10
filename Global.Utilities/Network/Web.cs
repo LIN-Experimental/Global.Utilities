@@ -4,10 +4,8 @@ using System.Text;
 
 namespace Global.Utilities.Network;
 
-
 public static class Web
 {
-
 
     /// <summary>
     /// Agregar parámetros a una Url.
@@ -18,7 +16,6 @@ public static class Web
     {
         return new(AddParameters(baseUrl.ToString(), parameters));
     }
-
 
 
     /// <summary>
@@ -49,6 +46,5 @@ public static class Web
         return finalUrl;
 
     }
-
 
 }

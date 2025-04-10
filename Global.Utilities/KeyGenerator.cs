@@ -3,10 +3,8 @@ using System;
 
 namespace Global.Utilities;
 
-
 public static class KeyGenerator
 {
-
 
     /// <summary>
     /// Genera una llave
@@ -14,7 +12,6 @@ public static class KeyGenerator
     /// <param name="length">Tamaño primario de la llave</param>
     public static string Generate(int length, string prefix = "key.")
     {
-
         try
         {
             // Lista de caracteres
@@ -39,15 +36,11 @@ public static class KeyGenerator
             // Retorno de la key
             return prefix + key.ToString();
         }
-        catch
+        catch (Exception)
         {
             return Generate(length, prefix);
         }
-
-
     }
-
-
 
     /// <summary>
     /// Genera un código OTP
@@ -55,7 +48,6 @@ public static class KeyGenerator
     /// <param name="length">Tamaño</param>
     public static string GenerateOTP(int length)
     {
-
         try
         {
             // Lista de caracteres
@@ -79,13 +71,10 @@ public static class KeyGenerator
             // Retorno de la key
             return key.ToString();
         }
-        catch
+        catch (Exception)
         {
             return GenerateOTP(length);
         }
-
-
     }
-
 
 }

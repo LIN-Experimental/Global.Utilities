@@ -6,16 +6,16 @@ using System.Collections.Generic;
 
 namespace Global.Utilities;
 
-
 public static class Strings
 {
-
 
     /// <summary>
     /// Obtener las iniciales de las palabras.
     /// </summary>
     public static string GetInitials(this string name)
     {
+
+        DateTime.T
 
         name = name.Trim();
         string init = "";

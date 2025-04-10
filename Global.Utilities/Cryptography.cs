@@ -25,6 +25,4 @@ public static class Cryptography
         return Convert.ToBase64String(hashBytes);
 
     }
-
-
 }

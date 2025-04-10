@@ -1,9 +1,7 @@
 ﻿namespace Global.Utilities;
 
-
 public static class Currency
 {
-
 
     /// <summary>
     /// Calcula el precio total al aplicar un descuento.
@@ -20,7 +18,6 @@ public static class Currency
         else if (discountPercent > 99)
             discountPercent = 99;
 
-
         // Calcula el monto del descuento
         var montoDescuento = originalPrice * (discountPercent / 100.0m);
 
@@ -32,6 +29,5 @@ public static class Currency
 
         return precioConDescuento;
     }
-
 
 }
